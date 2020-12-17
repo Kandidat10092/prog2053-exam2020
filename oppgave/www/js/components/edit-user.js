@@ -7,7 +7,45 @@ class EditUser extends LitElement {
     };
   }
 
-  // din kode her
+  constructor() {
+    super();
+    this.user = {
+      uname: '',
+      firstName: '',
+      lastName: '',
+      oldPwd: '',
+      pwd: ''
+    };
+  }
+
+
+  // For some reason I can't load the page if I have anything else in the username placeholder (even if I delete it, weird bug?)
+  render() {
+    return html`
+      <ul>
+      <div>
+        <label for="uname">Username</label>
+        <input type="text" placeholder="${this.uname}" name="uname">
+      </div>
+      <div>
+        <label for="firstName">First Name</label>
+        <input type="text" placeholder="${this.firstName}" name="firstName">
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" placeholder="${this.lastName}" name="lastName">
+      </div>
+      <div>
+        <label for="oldPwd">Old Password</label>
+        <input type="password" placeholder="" name="oldPwd">
+      </div>
+      <div>
+        <label for="pwd">New Password</label>
+        <input type="password" placeholder="" name="uname">
+      </div>
+      </ul>
+    `;
+  }
 
 }
 customElements.define('edit-user', EditUser);
