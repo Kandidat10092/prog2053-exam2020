@@ -19,6 +19,12 @@ class EditUser extends LitElement {
   }
 
 
+  static get styles() {
+    return css`
+      div { cursor: pointer; font-size: 20px; margin-bottom: 10px; }
+    `;
+  }
+
   // For some reason I can't load the page if I have anything else in the username placeholder (even if I delete it, weird bug?)
   render() {
     return html`
